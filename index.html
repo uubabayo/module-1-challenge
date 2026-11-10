@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module 1 Challenge</title>
+  </head>
+  <body>
+    <script>
+      //Declaring an object with name myInfo and assigining values to it
+      //creating the properties name, date of birth, nationality and current location and assigning values to them of type string
+      //delaring the hobbies properties of type Array.
+      const myInfo = {
+        name: "Umar Usman Babayo",
+        dob: "01/01/2006",
+        nationality: "Nigeria",
+        currentLocation: "Gombe, Nigeria",
+        hobbies: [
+          "Exploring and learning new things in the tech world!",
+          "Another hobbie",
+        ],
+      };
+      //defining a function with name age and argument birthyear
+      function age(birthyear) {
+        //delcraring variables to get the current year and calculating the approximate age from the currentyear - birthyear
+        const getCurrentYear = new Date().getFullYear();
+        const approxAge = getCurrentYear - birthyear;
+        //returning the result whenever the function age get invoke
+        return approxAge;
+      }
+      /*declaring the year variable, and assigning the value of the birth year from myInfo object property of age and
+      extracting the part that contains the birth year only
+      */
+      const year = Number(myInfo.dob.slice(-4));
+      //adding the age as a property to the myInfo object
+      myInfo.age = age(year);
+      //Writing to current document the age by invoking the age function and passing the year as a parameter
+      document.write("Age: " + age(year));
+    </script>
+  </body>
+</html>
